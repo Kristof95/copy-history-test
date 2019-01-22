@@ -1,5 +1,5 @@
-# RESTful API Example with Spring Boot, Spring Data REST and MySQL
+# Handling Circular Reference of JPA/Hibernate Bidirectional Entity Relationships with Jackson `JsonIgnoreProperties`
 
 ## Tutorial
 
-https://hellokoding.com/restful-api-example-with-spring-boot-spring-data-rest-and-mysql/
+https://hellokoding.com/handling-circular-reference-of-jpa-hibernate-bidirectional-entity-relationships-with-jackson-jsonignoreproperties/
