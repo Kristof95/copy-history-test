@@ -17,5 +17,6 @@
 
     <modules>
         <module>springdatarest-mysql-single</module>
+        <module>circular-reference-jackson</module>
     </modules>
 </project>
