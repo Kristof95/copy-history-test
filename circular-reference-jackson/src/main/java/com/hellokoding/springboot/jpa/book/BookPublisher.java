@@ -11,7 +11,7 @@ import java.util.Date;
 @Data
 public class BookPublisher {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @ManyToOne

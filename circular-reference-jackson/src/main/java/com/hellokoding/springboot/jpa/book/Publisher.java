@@ -14,7 +14,7 @@ import java.util.Set;
 @EqualsAndHashCode(exclude = "bookPublishers")
 public class Publisher {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String name;
