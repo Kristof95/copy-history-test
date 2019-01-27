@@ -1,5 +1,5 @@
-# RESTful API Example with Spring Boot, Spring Data REST and MySQL
+# RESTful API Example with Spring Boot, MySQL and Swagger
 
 ## Tutorial
 
-https://hellokoding.com/restful-api-example-with-spring-boot-spring-data-rest-and-mysql/
+https://hellokoding.com/restful-apis-example-with-spring-boot-integration-test-with-mockmvc-ui-integration-with-vuejs/

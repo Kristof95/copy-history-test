@@ -1,4 +1,4 @@
-package com.hellokoding.restful;
+package com.hellokoding.springboot.restful;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

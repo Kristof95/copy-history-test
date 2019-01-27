@@ -18,6 +18,7 @@
     <modules>
         <module>springdatarest-mysql-single</module>
         <module>circular-reference-jackson</module>
-        <module>crud-mysql-vuejs</module>
+        <module>springboot-mockmvc-hsql</module>
+        <module>springboot-mysql</module>
     </modules>
 </project>

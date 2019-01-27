@@ -1,4 +1,4 @@
-package com.hellokoding.restful.product;
+package com.hellokoding.springboot.restful.product;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
