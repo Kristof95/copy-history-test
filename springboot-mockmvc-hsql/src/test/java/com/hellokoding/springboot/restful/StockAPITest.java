@@ -12,10 +12,9 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.hamcrest.Matchers.hasSize;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
@@ -31,6 +30,7 @@ public class StockAPITest {
     @Test
     public void findAll() throws Exception {
         Stock stock = new Stock();
+        stock.setId(1L);
         stock.setName("Stock 1");
         stock.setPrice(new BigDecimal(1));
 
@@ -39,6 +39,6 @@ public class StockAPITest {
 
         this.mockMvc.perform(get("/api/v1/stocks"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.*", hasSize(stocks.size())));
+                .andExpect(content().json("[{'id': 1,'name': 'Stock 1';'price': 1}]"));
     }
 }

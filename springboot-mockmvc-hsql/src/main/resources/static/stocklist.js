@@ -56,7 +56,7 @@ var demo = new Vue({
   el: '#demo',
   data: {
     searchQuery: '',
-    gridColumns: ['name', 'currentPrice'],
+    gridColumns: ['name', 'price'],
     gridData: []
   },
   mounted: function () {
