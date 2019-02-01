@@ -6,7 +6,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,7 +25,7 @@ public class ProductAPI {
     }
 
     @PostMapping
-    public ResponseEntity<ProductDTO> create(@Valid @RequestBody ProductDTO productDTO) {
+    public ResponseEntity<ProductDTO> create(@RequestBody ProductDTO productDTO) {
         Product product = productService.save(productMapper.toProduct(productDTO));
 
         return ResponseEntity.status(HttpStatus.CREATED).body(productMapper.toProductDTO(product));
