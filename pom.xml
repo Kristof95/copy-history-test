@@ -19,6 +19,7 @@
         <module>springdatarest-mysql-single</module>
         <module>circular-reference-jackson</module>
         <module>springboot-mockmvc-hsql</module>
-        <module>springboot-mysql</module>
+        <module>springboot-swagger</module>
+        <module>springboot-mapstruct</module>
     </modules>
 </project>

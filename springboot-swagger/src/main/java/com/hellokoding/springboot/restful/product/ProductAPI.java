@@ -16,36 +16,39 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class ProductAPI {
     private final ProductService productService;
+    private final ProductMapper productMapper;
 
     @GetMapping
-    public ResponseEntity<List<Product>> findAll() {
-        return ResponseEntity.ok(productService.findAll());
+    public ResponseEntity<List<ProductDTO>> findAll() {
+        return ResponseEntity.ok(productMapper.toProductDTOs(productService.findAll()));
     }
 
     @PostMapping
-    public ResponseEntity create(@Valid @RequestBody Product product) {
-        return ResponseEntity.ok(productService.save(product));
+    public ResponseEntity create(@Valid @RequestBody ProductDTO productDTO) {
+        return ResponseEntity.ok(productService.save(productMapper.toProduct(productDTO)));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Product> findById(@PathVariable Long id) {
+    public ResponseEntity<ProductDTO> findById(@PathVariable Long id) {
         Optional<Product> stock = productService.findById(id);
         if (!stock.isPresent()) {
             log.error("Id " + id + " is not existed");
             ResponseEntity.badRequest().build();
         }
 
-        return ResponseEntity.ok(stock.get());
+        return ResponseEntity.ok(productMapper.toProductDTO(stock.get()));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Product> update(@PathVariable Long id, @Valid @RequestBody Product product) {
+    public ResponseEntity<ProductDTO> update(@PathVariable Long id, @Valid @RequestBody ProductDTO productDTO) {
         if (!productService.findById(id).isPresent()) {
             log.error("Id " + id + " is not existed");
             ResponseEntity.badRequest().build();
         }
 
-        return ResponseEntity.ok(productService.save(product));
+        Product product = productService.save(productMapper.toProduct(productDTO));
+
+        return ResponseEntity.ok(productMapper.toProductDTO(product));
     }
 
     @DeleteMapping("/{id}")
