@@ -2,4 +2,4 @@
 
 ## Tutorial
 
-https://hellokoding.com/restful-apis-example-with-spring-boot-integration-test-with-mockmvc-ui-integration-with-vuejs/
+https://hellokoding.com/mapping-jpa-hibernate-entity-and-dto-with-mapstruct/
