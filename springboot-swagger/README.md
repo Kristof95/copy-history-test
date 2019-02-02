@@ -1,5 +1,5 @@
-# RESTful API Example with Spring Boot, MySQL and Swagger
+# Spring Boot RESTful API Documentation with Swagger and SpringFox
 
 ## Tutorial
 
-https://hellokoding.com/restful-apis-example-with-spring-boot-integration-test-with-mockmvc-ui-integration-with-vuejs/
+https://hellokoding.com/spring-boot-restful-api-documentation-with-swagger-and-springfox/
