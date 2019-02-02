@@ -26,23 +26,26 @@ public class ProductAPI {
 
     @PostMapping
     public ResponseEntity<ProductDTO> create(@RequestBody ProductDTO productDTO) {
-        Product product = productService.save(productMapper.toProduct(productDTO));
+        productService.save(productMapper.toProduct(productDTO));
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(productMapper.toProductDTO(product));
+        return ResponseEntity.status(HttpStatus.CREATED).body(productDTO);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<ProductDTO> findById(@PathVariable Long id) {
-        Optional<Product> stock = productService.findById(id);
+        Optional<Product> product = productService.findById(id);
 
-        return ResponseEntity.ok(productMapper.toProductDTO(stock.get()));
+        return ResponseEntity.ok(productMapper.toProductDTO(product.get()));
     }
 
-    @PatchMapping("/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<ProductDTO> update(@PathVariable Long id, @RequestBody ProductDTO productDTO) {
-        Product product = productService.save(productMapper.toProduct(productDTO));
+        Product product = productMapper.toProduct(productDTO);
+        product.setId(id);
 
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body(productMapper.toProductDTO(product));
+        productService.save(product);
+
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(productDTO);
     }
 
     @DeleteMapping("/{id}")
